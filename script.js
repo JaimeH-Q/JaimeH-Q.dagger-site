@@ -124,7 +124,7 @@ const commands = {
         if(args[0]){
             return "El sistema no puede encontrar la ruta especificada."
         }
-        return "C:\\Users\\Dagger"
+        return "C:\\Users\\Dager"
     }
 };
 
@@ -143,7 +143,7 @@ inputTerminal.addEventListener("keydown", (event) => {
 // Agregar el comando al registro
 function addCommandToOutput(command) {
     const commandElement = document.createElement("div");
-    commandElement.textContent = `C:\\Users\\Dagger> ${command}`;
+    commandElement.textContent = `C:\\Users\\Dager> ${command}`;
     output.appendChild(commandElement);
 }
 
