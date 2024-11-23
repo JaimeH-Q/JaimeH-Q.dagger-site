@@ -398,6 +398,10 @@ section {
     border-radius: 15px;
 }
 
+#lumberjack-image {
+    border-radius: 40px;
+}
+
 .showcase {
     width: 500px;
     height: 300px;

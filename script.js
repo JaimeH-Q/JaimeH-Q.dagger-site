@@ -52,8 +52,18 @@ let unlocked = false;
 
 // Lista de comandos válidos (puedes extenderla fácilmente)
 const commands = {
-    help: () => "Comandos disponibles: help, clear, echo [mensaje], dir, y más",
-    clear: () => { output.innerHTML = ""; return "Terminal limpiada."; },
+    help: () => {
+        const availableCommands = [
+          "HELP   Muestra esta lista de comandos",
+          "CLS   Limpia la consola",
+          "ECHO [mensaje]    Muestra el mensaje proporcionado",
+          "DIR   Lista el directorio actual",
+          "+   Y más comandos",
+          // Agrega más comandos aquí si los tienes
+        ];
+        return "Comandos disponibles:\n" + availableCommands.join("\n");
+      },
+    cls: () => { output.innerHTML = ""; return "Terminal limpiada."; },
     echo: (args) => args.join(" ") || "Error: No hay mensaje para decir.",
     dir: () => {
         const files = ["23/11/2024  17:24        108 secret.txt"]; // Lista de "archivos" en la terminal
@@ -82,7 +92,7 @@ const commands = {
         output.appendChild(responseElement);
         return "Error: No se puede abrir fuera de la terminal."
     },
-    "¡FALOPA!": () => {
+    "¡falopa!": () => {
         unlockLumberjackBUtton();
         if(unlocked){
             return "*Escuchas el sonido de algo entrando a otra cosa que ya está abierta, es un poco raro que sepas reconocer tan bien este sonido*"
@@ -103,8 +113,18 @@ const commands = {
             return `Error: El archivo o directorio '${fileName}' no existe.`
         }
     },
+    rm: () => {return "Te estás confundiendo de terminal."},
     mkdir: () => {
         return "Tampoco rompamos las bolas"
+    },
+    soygay: () => {
+        return "Bueno, no te la bancaste. El comando secreto es: ¡FALOPA!, se revela al final de página. Si no encontras el lumberjack, reemplazó a lo que antes era una foto de ese mismo frame (te agarré eh). "
+    },
+    cd: (args) => {
+        if(args[0]){
+            return "El sistema no puede encontrar la ruta especificada."
+        }
+        return "C:\\Users\\Dagger"
     }
 };
 
@@ -130,7 +150,7 @@ function addCommandToOutput(command) {
 // Procesar el comando y mostrar la salida
 function processCommand(input) {
     const [command, ...args] = input.split(/\s+/); // Dividir en comando y argumentos
-    const result = commands[command];
+    const result = commands[command.toLowerCase()];
     const response = typeof result === "function" ? result(args) : result || "Comando no reconocido.";
     if (response) {
         const responseElement = document.createElement("div");
