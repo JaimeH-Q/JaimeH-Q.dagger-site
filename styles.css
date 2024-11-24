@@ -646,6 +646,10 @@ gba(155, 111, 238, 1)
         padding-right: 4rem !important;
     }
 
+    .border_container p {
+        max-width: 95vw;
+    }
+
     .invisible {
         color: rgba(243, 76, 229, 1) !important;
 
