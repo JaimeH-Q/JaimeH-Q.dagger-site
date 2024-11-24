@@ -611,7 +611,8 @@ gba(155, 111, 238, 1)
 /* responsive la puta que lo pario */
 @media (max-width: 1000px){
     *{
-        overflow-x: hidden;
+        overflow-x: hidden !important;
+
     }
 
     .logo{
@@ -637,8 +638,8 @@ gba(155, 111, 238, 1)
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        max-width: 100vw;
-        padding: 20px;
+        max-width: 95vw !important;
+        padding: 1rem;
     }
 
     .border_container{
@@ -691,9 +692,8 @@ gba(155, 111, 238, 1)
         padding-top: 2rem;
         max-height: 60rem !important;
         padding-bottom: 2rem;
-        margin-left: 0.3rem;
-        margin-right: 0.3rem;
         overflow: hidden;
+        max-width: 100vw;
     }
 
     .bg {
@@ -748,6 +748,7 @@ gba(155, 111, 238, 1)
 
     .big-title {
         text-align: center;
+        max-width: 95vw;
     }
 
     #falopa-section {
