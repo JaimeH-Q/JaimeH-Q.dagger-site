@@ -693,6 +693,7 @@ gba(155, 111, 238, 1)
         padding-bottom: 2rem;
         margin-left: 0.3rem;
         margin-right: 0.3rem;
+        overflow: hidden;
     }
 
     .bg {
@@ -743,6 +744,14 @@ gba(155, 111, 238, 1)
 
     #terminal {
         min-height: 300px;
+    }
+
+    .big-title {
+        text-align: center;
+    }
+
+    #falopa-section {
+        max-width: 95vw !important;
     }
 
 
